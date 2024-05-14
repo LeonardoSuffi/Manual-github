@@ -79,3 +79,53 @@ Isso criará uma cópia local do repositório em seu computador, incluindo todos
 1. É a versão do repositório hospedada em um serviço de servidor, como GitHub, GitLab, ou Bitbucket.
 2. Serve como um ponto central, onde colaboradores podem sincronizar mudanças.
 3. Facilita a colaboração entre vários desenvolvedores, pois qualquer um com acesso pode clonar o repositório, fazer alterações e propor atualizações.
+
+## 3. Trabalhando com Múltiplos Branches
+
+### Criação e Gerenciamento de Branches
+### Criar um novo branch:
+1. Para criar um novo branch, use o comando:
+```
+git branch nome-do-branch
+```
+Isso cria um novo branch baseado no estado atual do branch em que você está (geralmente o master ou main).
+
+2. Para começar a trabalhar no novo branch, você deve mudar para ele usando:
+```
+git checkout nome-do-branch
+```
+A partir de agora, todos os commits que você fizer serão feitos nesse branch.
+
+### Listar branches:
+•   Para ver todos os branches existentes no seu repositório (o asterisco mostra o branch atual):
+```
+git branch
+```
+
+### Deletar um branch:
+•   Para deletar um branch local que você não precisa mais:
+```
+git branch -d nome-do-branch
+```
+•   Se o branch não foi completamente mesclado e você ainda quer deletá-lo, use:
+```
+git branch -D nome-do-branch
+```
+
+### Uso Prático de Branches para Diferentes Ambientes
+Em muitos fluxos de trabalho de desenvolvimento, especialmente em equipes, é comum usar diferentes branches para diferentes propósitos:
+1. **Desenvolvimento:** Normalmente chamado **dev** ou **develop**, este branch serve como um ambiente ativo para desenvolvimento onde todas as novas funcionalidades, correções e melhorias são integradas antes de serem estáveis e prontas para produção.
+2. **Produção:** Geralmente chamado **master** ou **main**, é o branch que reflete o código atual em produção. É estável e as mudanças só são feitas aqui após testes rigorosos.
+
+### Exemplo de workflow:
+
+1. **Desenvolvimento de novas funcionalidades:** Crie um branch a partir do **develop** para cada nova funcionalidade.
+2. **Teste e revisão:** Uma vez concluída, crie um pull request para o **develop**.
+3. **Preparação para lançamento:** Após um ciclo de desenvolvimento, as funcionalidades no develop são testadas juntas e depois mescladas no **release branch**, que eventualmente será mesclado em **main**.
+
+### Navegação entre Branches
+•   Para alternar entre branches:
+```
+git checkout nome-do-branch
+```
+Isso muda seu diretório de trabalho para o branch especificado.
