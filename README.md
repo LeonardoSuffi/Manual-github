@@ -17,10 +17,10 @@
 
 1. Abra o terminal.
 2. Dependendo da distribuição, use o gerenciador de pacotes apropriado:
-   • Para Debian/Ubuntu: sudo apt-get install git
-   • Para Fedora: sudo dnf install git
-   • Para Arch Linux: sudo pacman -S git
-4. Confirme a instalação com git --version.
+   - Para Debian/Ubuntu: sudo apt-get install git
+   - Para Fedora: sudo dnf install git
+   - Para Arch Linux: sudo pacman -S git
+3. Confirme a instalação com git --version.
 
 ### Configuração inicial do Git
 Após a instalação, você precisará configurar algumas informações básicas. Isso é importante porque cada commit no Git usa esta informação:
@@ -84,30 +84,30 @@ Isso criará uma cópia local do repositório em seu computador, incluindo todos
 
 ### Criação e Gerenciamento de Branches
 ### Criar um novo branch:
-1. Para criar um novo branch, use o comando:
+- Para criar um novo branch, use o comando:
 ```
 git branch nome-do-branch
 ```
 Isso cria um novo branch baseado no estado atual do branch em que você está (geralmente o master ou main).
 
-2. Para começar a trabalhar no novo branch, você deve mudar para ele usando:
+- Para começar a trabalhar no novo branch, você deve mudar para ele usando:
 ```
 git checkout nome-do-branch
 ```
 A partir de agora, todos os commits que você fizer serão feitos nesse branch.
 
 ### Listar branches:
-•   Para ver todos os branches existentes no seu repositório (o asterisco mostra o branch atual):
+-   Para ver todos os branches existentes no seu repositório (o asterisco mostra o branch atual):
 ```
 git branch
 ```
 
 ### Deletar um branch:
-•   Para deletar um branch local que você não precisa mais:
+-   Para deletar um branch local que você não precisa mais:
 ```
 git branch -d nome-do-branch
 ```
-•   Se o branch não foi completamente mesclado e você ainda quer deletá-lo, use:
+-   Se o branch não foi completamente mesclado e você ainda quer deletá-lo, use:
 ```
 git branch -D nome-do-branch
 ```
@@ -124,7 +124,7 @@ Em muitos fluxos de trabalho de desenvolvimento, especialmente em equipes, é co
 3. **Preparação para lançamento:** Após um ciclo de desenvolvimento, as funcionalidades no develop são testadas juntas e depois mescladas no **release branch**, que eventualmente será mesclado em **main**.
 
 ### Navegação entre Branches
-•   Para alternar entre branches:
+-   Para alternar entre branches:
 ```
 git checkout nome-do-branch
 ```
