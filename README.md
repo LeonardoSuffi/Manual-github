@@ -129,3 +129,46 @@ Em muitos fluxos de trabalho de desenvolvimento, especialmente em equipes, é co
 git checkout nome-do-branch
 ```
 Isso muda seu diretório de trabalho para o branch especificado.
+
+## 4. Integração com IDEs
+
+### VSCode
+
+### Instalação da Extensão Git:
+1. **Abrir o VSCode**.
+2. **Acessar a aba de extensões** (ícone de blocos na barra lateral esquerda ou Ctrl+Shift+X).
+3. **Pesquisar por "Git"** e escolher a extensão oficial chamada "GitLens" ou outra que preferir, como "Git History".
+4. **Clicar em instalar**.
+
+***Gerenciamento de branches e commits através do VSCode:***
+
+- Branches:
+1. **Acessar o painel do Git** (ícone de três pontos no canto inferior esquerdo ou Ctrl+Shift+G).
+2. **Criar, alternar e deletar branches** diretamente pela interface gráfica.
+- Commits:
+1. **Fazer alterações nos arquivos** e salvá-los.
+2. **Abrir o painel do Git**, ver as mudanças, e adicionar arquivos ao stage (área de preparação) clicando no sinal de mais.
+3. **Digitar uma mensagem de commit** e confirmar o commit clicando no ícone de check.
+
+
+### Eclipse
+
+### Configuração do Plugin EGit:
+1. **Abrir o Eclipse**.
+2. **Ir para Help > Eclipse Marketplace**.
+3. **Pesquisar por "EGit"** e instalar o plugin.
+
+***Execução de Operações Git Dentro do Eclipse:***
+- **Clonagem de Repositórios: File > Import > Git > Projects from Git**.
+- **Criação de Branches, Commits e Merges:** Acessível através do painel Git na perspectiva Team > Git.
+- **Gerenciar Repositórios:** Pode ser feito através do Git Repositories view, onde você pode adicionar, commitar, push e pull, assim como criar e mesclar branches.
+
+
+### Android Studio
+
+### Uso do Controle de Versão Integrado para Gerenciar Projetos Android:
+1. **Abrir o Android Studio e seu projeto**.
+2. **Ativar o VCS: VCS > Enable Version Control Integration**, escolha Git como o sistema de controle de versão.
+3. **Commit de Alterações: VCS > Commit** (ou Ctrl+K), que permite selecionar arquivos, escrever mensagens de commit, e commitar.
+4. **Gerenciamento de Branches:** Acesso através de VCS > Git > Branches, permitindo criar, mudar e deletar branches.
+5. **Push e Pull de Alterações:** Feitos através de VCS > Git, escolhendo Push (Ctrl+Shift+K) ou Pull.
