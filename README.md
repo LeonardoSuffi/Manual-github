@@ -1,5 +1,5 @@
-# 1. Manual Github do Professor Rold
-## Instalação do Git
+# Manual Github do Professor Rold
+## 1. Instalação do Git
 ### Para Windows:
 
 1. Baixe o instalador do Git em git-scm.com.
@@ -241,4 +241,52 @@ git checkout develop
 git pull
 git branch -d feature/nova-feature
 git push origin --delete feature/nova-feature
+```
+
+## 6. Commits e Gerenciamento de Versão
+
+No Git, fazer commits de maneira eficaz e estratégica é fundamental para manter um histórico de versões limpo e útil, facilitando o entendimento das mudanças e a manutenção do projeto. Vamos discutir como realizar commits intermediários eficientes, estratégias para commits limpos, e o uso de tags para marcar lançamentos de versões.
+
+### Realização de Commits Intermediários em Desenvolvimento
+**Commits intermediários** são importantes para salvar o progresso do seu trabalho sem necessariamente completar uma funcionalidade inteira. Isso é útil em casos de mudanças de prioridade ou problemas que exigem que você mude de tarefa temporariamente.
+
+- **Comande bem:** Faça commits frequentemente, mas apenas de mudanças que compõem uma unidade lógica de trabalho. Isso pode ser uma correção de bug, uma pequena adição ou uma melhoria em uma funcionalidade existente.
+
+```
+git add arquivo-modificado.js
+git commit -m "Corrige o bug no cálculo de taxas"
+```
+- Use mensagens claras e descritivas: As mensagens de commit devem ser concisas e explicar claramente o porquê das mudanças feitas.
+
+### Estratégias para Commits Limpos e Eficazes
+1. **Commit Atomizado:** Cada commit deve representar uma única "unidade atômica" de mudança. Isso facilita o rollback de mudanças específicas sem afetar outras funcionalidades.
+
+2. **Squash de Commits:** Antes de mesclar um branch de feature, você pode "amassar" múltiplos commits em um só, se eles forem parte do mesmo trabalho. Isso ajuda a manter o histórico de commits limpo e fácil de entender.
+
+- Usando Git no terminal:
+```
+git rebase -i HEAD~3  # "3" é o número de commits que você quer squash
+```
+- No editor que aparece, substitua pick por squash para os commits que deseja combinar e então salve e saia.
+
+3. **Revisão e Rebase:** Regularmente rebase seu branch de feature com o branch principal (como **main** ou **develop**) para manter a sincronia e reduzir conflitos.
+
+### Tagging para Marcar Lançamentos de Versões
+As **tags** no Git são usadas para marcar pontos específicos no histórico do repositório como importantes — geralmente, lançamentos de versões (v1.0, v2.0, etc.).
+
+- Criar uma tag:
+```
+git tag -a v1.0 -m "Versão inicial"
+git push origin v1.0
+```
+
+- Listar tags:
+```
+git tag
+```
+
+- Deletar uma tag:
+```
+git tag -d v1.0
+git push origin --delete v1.0
 ```
