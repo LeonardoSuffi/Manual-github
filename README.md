@@ -1,5 +1,5 @@
-# Manual Github do Professor Rold
-## 1. Instalação do Git
+# 1. Manual Github do Professor Rold
+## Instalação do Git
 ### Para Windows:
 
 1. Baixe o instalador do Git em git-scm.com.
@@ -290,3 +290,71 @@ git tag
 git tag -d v1.0
 git push origin --delete v1.0
 ```
+
+## 7. Fluxo de Trabalho Avançado
+Um fluxo de trabalho avançado em Git inclui não apenas a gestão de branches e commits, mas também a gestão eficaz de como as mudanças são rastreadas e documentadas através de BACKLOG, CHANGELOG e versionamento semântico (X.Y.Z). Vamos explorar como esses componentes se integram ao fluxo de trabalho de desenvolvimento.
+
+### BACKLOG
+O BACKLOG é fundamentalmente uma lista organizada de tarefas e funcionalidades planejadas para o projeto. Embora a implementação exata possa variar dependendo das ferramentas utilizadas, vou dar um exemplo de como você pode gerenciar um BACKLOG usando o GitHub Issues, que é uma forma comum e integrada ao ambiente de desenvolvimento.
+
+**Exemplo de Criação e Gerenciamento de BACKLOG no GitHub:**
+
+**1. Criar um Issue:**
+- Vá até a aba "Issues" no seu repositório GitHub.
+- Clique em "New issue".
+- Adicione um título e uma descrição detalhada para a tarefa.
+- Você pode categorizar a issue usando labels como **bug**, **feature**, **enhancement**.
+
+**2. Priorização e Organização:**
+- Use Milestones para agrupar issues em metas específicas ou sprints.
+- Priorize issues dentro dos Milestones usando labels como high priority, low priority.
+
+### CHANGELOG
+Um CHANGELOG é um arquivo que registra todas as mudanças significativas feitas em cada lançamento de um projeto. Aqui está um exemplo de como você pode manter um **CHANGELOG.md** em seu repositório:
+
+**Exemplo de Conteúdo de CHANGELOG.md:**
+```
+# Changelog
+Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
+
+## [1.0.1] - 2024-05-14
+### Fixed
+- Correção de bug que impedia a exportação de arquivos CSV em sistemas Windows.
+
+## [1.0.0] - 2024-05-10
+### Added
+- Função de login através de redes sociais.
+- Sistema de backup automático de dados.
+
+### Changed
+- Melhoria no algoritmo de busca, aumentando a velocidade de resposta em 20%.
+
+### Fixed
+- Correção de layout no formulário de contato.
+```
+
+**Práticas:**
+
+- Mantenha o changelog atualizado a cada release.
+- Use hyperlinks para referenciar commits e pull requests para detalhar as mudanças.
+
+### Versionamento Semântico (SemVer)
+O Versionamento Semântico é uma prática de versionar software de forma a explicitar o tipo de mudanças feitas. Aqui está como você poderia aplicar isso usando tags no Git.
+
+**Comandos para Tagging de Versão no Git:**
+
+- **Criar uma nova tag:**
+```
+git tag -a v2.0.0 -m "Lançamento da versão 2.0.0 com grandes mudanças na API"
+git push origin v2.0.0
+```
+
+- **Listar todas as tags:**
+```
+git tag
+```
+
+**Código e Práticas:**
+- Aumente o primeiro número (X) se houver mudanças que quebrem a compatibilidade.
+- Aumente o segundo número (Y) se novas funcionalidades forem adicionadas de forma compatível.
+- Aumente o terceiro número (Z) para correções de bugs.
