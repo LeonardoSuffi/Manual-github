@@ -172,3 +172,73 @@ Isso muda seu diretório de trabalho para o branch especificado.
 3. **Commit de Alterações: VCS > Commit** (ou Ctrl+K), que permite selecionar arquivos, escrever mensagens de commit, e commitar.
 4. **Gerenciamento de Branches:** Acesso através de VCS > Git > Branches, permitindo criar, mudar e deletar branches.
 5. **Push e Pull de Alterações:** Feitos através de VCS > Git, escolhendo Push (Ctrl+Shift+K) ou Pull.
+
+## 5. Estratégias de Branching
+
+### Estratégia de Manutenção e Produção Separadas
+1. Criar um branch de hotfix a partir do main:
+
+
+```
+git checkout main
+git pull
+git checkout -b hotfix/nome-do-hotfix
+```
+
+2. Após concluir o hotfix, mesclar de volta ao main:
+
+```
+git checkout main
+git merge hotfix/nome-do-hotfix
+git push
+```
+3. Também mesclar o hotfix ao branch de desenvolvimento (ex: develop):
+
+```
+git checkout develop
+git merge hotfix/nome-do-hotfix
+git push
+```
+
+4. Deletar o branch de hotfix após a mesclagem:
+
+```
+git branch -d hotfix/nome-do-hotfix
+```
+
+### Branches de Feature: Gerenciamento e Melhores Práticas
+
+1. Criar um branch de feature a partir do develop:
+
+```
+git checkout develop
+git pull
+git checkout -b feature/nova-feature
+```
+
+2. Trabalhar na feature e fazer commits regularmente:
+
+```
+git add .
+git commit -m "Adiciona nova funcionalidade"
+```
+
+3. Manter o branch de feature atualizado com o develop para evitar conflitos futuros:
+
+```
+git fetch origin
+git rebase origin/develop
+```
+
+4. Submeter a feature para revisão através de um pull request:
+
+- Isso geralmente é feito através da interface do GitHub ou de outra plataforma de hospedagem Git, onde você compara seu branch de feature com o branch develop e cria um pull request.
+
+5. Após o pull request ser aprovado e mesclado, deletar o branch de feature localmente e remotamente:
+
+```
+git checkout develop
+git pull
+git branch -d feature/nova-feature
+git push origin --delete feature/nova-feature
+```
