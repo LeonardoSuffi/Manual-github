@@ -232,7 +232,7 @@ git rebase origin/develop
 
 4. Submeter a feature para revisão através de um pull request:
 
-- Isso geralmente é feito através da interface do GitHub ou de outra plataforma de hospedagem Git, onde você compara seu branch de feature com o branch develop e cria um pull request.
+   - Isso geralmente é feito através da interface do GitHub ou de outra plataforma de hospedagem Git, onde você compara seu branch de feature com o branch develop e cria um pull request.
 
 5. Após o pull request ser aprovado e mesclado, deletar o branch de feature localmente e remotamente:
 
@@ -256,7 +256,7 @@ No Git, fazer commits de maneira eficaz e estratégica é fundamental para mante
 git add arquivo-modificado.js
 git commit -m "Corrige o bug no cálculo de taxas"
 ```
-- Use mensagens claras e descritivas: As mensagens de commit devem ser concisas e explicar claramente o porquê das mudanças feitas.
+   - Use mensagens claras e descritivas: As mensagens de commit devem ser concisas e explicar claramente o porquê das mudanças feitas.
 
 ### Estratégias para Commits Limpos e Eficazes
 1. **Commit Atomizado:** Cada commit deve representar uma única "unidade atômica" de mudança. Isso facilita o rollback de mudanças específicas sem afetar outras funcionalidades.
@@ -267,7 +267,7 @@ git commit -m "Corrige o bug no cálculo de taxas"
 ```
 git rebase -i HEAD~3  # "3" é o número de commits que você quer squash
 ```
-- No editor que aparece, substitua pick por squash para os commits que deseja combinar e então salve e saia.
+   - No editor que aparece, substitua pick por squash para os commits que deseja combinar e então salve e saia.
 
 3. **Revisão e Rebase:** Regularmente rebase seu branch de feature com o branch principal (como **main** ou **develop**) para manter a sincronia e reduzir conflitos.
 
@@ -300,14 +300,14 @@ O BACKLOG é fundamentalmente uma lista organizada de tarefas e funcionalidades 
 **Exemplo de Criação e Gerenciamento de BACKLOG no GitHub:**
 
 **1. Criar um Issue:**
-- Vá até a aba "Issues" no seu repositório GitHub.
-- Clique em "New issue".
-- Adicione um título e uma descrição detalhada para a tarefa.
-- Você pode categorizar a issue usando labels como **bug**, **feature**, **enhancement**.
+   - Vá até a aba "Issues" no seu repositório GitHub.
+   - Clique em "New issue".
+   - Adicione um título e uma descrição detalhada para a tarefa.
+   - Você pode categorizar a issue usando labels como **bug**, **feature**, **enhancement**.
 
 **2. Priorização e Organização:**
-- Use Milestones para agrupar issues em metas específicas ou sprints.
-- Priorize issues dentro dos Milestones usando labels como high priority, low priority.
+   - Use Milestones para agrupar issues em metas específicas ou sprints.
+   - Priorize issues dentro dos Milestones usando labels como high priority, low priority.
 
 ### CHANGELOG
 Um CHANGELOG é um arquivo que registra todas as mudanças significativas feitas em cada lançamento de um projeto. Aqui está um exemplo de como você pode manter um **CHANGELOG.md** em seu repositório:
@@ -335,8 +335,8 @@ Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 
 **Práticas:**
 
-- Mantenha o changelog atualizado a cada release.
-- Use hyperlinks para referenciar commits e pull requests para detalhar as mudanças.
+   - Mantenha o changelog atualizado a cada release.
+   - Use hyperlinks para referenciar commits e pull requests para detalhar as mudanças.
 
 ### Versionamento Semântico (SemVer)
 O Versionamento Semântico é uma prática de versionar software de forma a explicitar o tipo de mudanças feitas. Aqui está como você poderia aplicar isso usando tags no Git.
@@ -355,6 +355,47 @@ git tag
 ```
 
 **Código e Práticas:**
-- Aumente o primeiro número (X) se houver mudanças que quebrem a compatibilidade.
-- Aumente o segundo número (Y) se novas funcionalidades forem adicionadas de forma compatível.
-- Aumente o terceiro número (Z) para correções de bugs.
+   - Aumente o primeiro número (X) se houver mudanças que quebrem a compatibilidade.
+   - Aumente o segundo número (Y) se novas funcionalidades forem adicionadas de forma compatível.
+   - Aumente o terceiro número (Z) para correções de bugs.
+
+## 8. Resolução de Conflitos
+
+### Técnicas para Resolução de Conflitos
+
+**1. Entender o Conflito:**
+   - Antes de tentar resolver um conflito, é importante entender as alterações feitas em cada branch que está tentando ser mesclada. Isso ajuda a determinar qual mudança deve prevalecer ou como integrar ambas de forma coerente.
+
+**2. Comunicação:**
+   - Quando o conflito envolve múltiplos colaboradores, discutir as mudanças com todos os envolvidos é crucial. Isso pode evitar mal-entendidos e ajudar a chegar a uma solução que todos concordam.
+
+**3. Uso Eficiente do Git Merge:**
+   - O comando git merge é frequentemente usado para mesclar branches. Quando ocorre um conflito, o Git pausa o processo de merge e marca os arquivos conflitantes no código.
+   - Você deve abrir esses arquivos e decidir manualmente como resolver os conflitos, escolhendo entre as mudanças do branch atual ou do branch que está sendo mesclado, ou combinando ambas de alguma forma.
+
+**4. Rebase Como Alternativa:**
+   - Usar **git rebase** em vez de **git merge** pode ser uma maneira de evitar alguns tipos de conflitos, pois ele recria a série de commits de um branch sobre a ponta de outro, podendo resultar em um histórico de projeto mais limpo.
+
+### Ferramentas para Resolução de Conflitos
+
+**1. Ferramentas Integradas nas IDEs:**
+   - Muitas IDEs, como Visual Studio Code, IntelliJ IDEA e Eclipse, têm ferramentas integradas de resolução de conflitos que apresentam as diferenças lado a lado e permitem que você escolha entre as alterações de forma interativa.
+   - Exemplo no Visual Studio Code:
+      -Abra os arquivos conflitantes, e o VSCode mostrará as mudanças conflitantes com opções para aceitar "Current Change", "Incoming Change", ou ambos.
+
+**2. Ferramentas Externas:**
+
+   - Existem várias ferramentas dedicadas à resolução de conflitos, como KDiff3, Beyond Compare, e Meld.
+   - Essas ferramentas podem ser configuradas para serem usadas com Git definindo a configuração merge.tool:
+```
+git config --global merge.tool kdiff3
+```
+
+**Comando Básico para Iniciar a Resolução de Conflitos**
+```
+# Após um conflito ter ocorrido durante um merge
+git status  # Verifica os arquivos conflitantes
+# Manualmente resolva os conflitos nos arquivos indicados
+git add arquivo_resolvido  # Marca o arquivo como resolvido
+git commit  # Finaliza o processo de merge
+```
