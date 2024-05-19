@@ -460,6 +460,7 @@ git commit  # Finaliza o processo de merge
    - **Práticas:** Devido ao tamanho do repositório, a Microsoft desenvolveu o GVFS (Git Virtual File System), que permite que o Git gerencie eficientemente grandes repositórios ao carregar apenas uma parte do código necessário para cada desenvolvedor.
 
 **Dicas para Manter a Integridade do Repositório**
+
 **1. Utilize Branches Estrategicamente:**
    - Mantenha branches separados para desenvolvimento, testes e produção. Isso não apenas ajuda a manter a estabilidade do código em produção, mas também permite testes e desenvolvimentos paralelos sem interferência.
 
