@@ -1,4 +1,52 @@
 # Manual Github do Professor Rold
+Este manual foi criado para auxiliar os alunos e profissionais a entender e utilizar o Git eficientemente. Aqui, você encontrará instruções detalhadas sobre a instalação, configuração e uso do Git em diferentes sistemas operacionais, além de práticas recomendadas para gerenciamento de repositórios, branches, commits e muito mais.
+
+# Índice
+
+## 1. [Instalação do Git](#1-instalação-do-git)
+   - [Para Windows](#para-windows)
+   - [Para macOS](#para-macos)
+   - [Para Linux](#para-linux)
+   - [Configuração inicial do Git](#configuração-inicial-do-git)
+   - [Definindo o editor padrão](#definindo-o-editor-padrão)
+
+## 2. [Repositórios Git: Local e Remoto](#2-repositórios-git-local-e-remoto)
+   - [Inicialização de um Novo Repositório](#inicialização-de-um-novo-repositório)
+   - [Clonagem de um Repositório Existente](#clonagem-de-um-repositório-existente)
+   - [Diferença Entre Repositórios Locais e Remotos](#diferença-entre-repositórios-locais-e-remotos)
+
+## 3. [Trabalhando com Múltiplos Branches](#3-trabalhando-com-múltiplos-branches)
+   - [Criação e Gerenciamento de Branches](#criação-e-gerenciamento-de-branches)
+   - [Navegação entre Branches](#navegação-entre-branches)
+
+## 4. [Integração com IDEs](#4-integração-com-ides)
+   - [VSCode](#vscode)
+   - [Eclipse](#eclipse)
+   - [Android Studio](#android-studio)
+
+## 5. [Estratégias de Branching](#5-estratégias-de-branching)
+   - [Estratégia de Manutenção e Produção Separadas](#estratégia-de-manutenção-e-produção-separadas)
+   - [Branches de Feature: Gerenciamento e Melhores Práticas](#branches-de-feature-gerenciamento-e-melhores-práticas)
+
+## 6. [Commits e Gerenciamento de Versão](#6-commits-e-gerenciamento-de-versão)
+   - [Realização de Commits Intermediários em Desenvolvimento](#realização-de-commits-intermediários-em-desenvolvimento)
+   - [Estratégias para Commits Limpos e Eficazes](#estratégias-para-commits-limpos-e-eficazes)
+   - [Tagging para Marcar Lançamentos de Versões](#tagging-para-marcar-lançamentos-de-versões)
+
+## 7. [Fluxo de Trabalho Avançado](#7-fluxo-de-trabalho-avançado)
+   - [BACKLOG](#backlog)
+   - [CHANGELOG](#changelog)
+   - [Versionamento Semântico (SemVer)](#versionamento-semântico-semver)
+
+## 8. [Resolução de Conflitos](#8-resolução-de-conflitos)
+   - [Técnicas para Resolução de Conflitos](#técnicas-para-resolução-de-conflitos)
+   - [Ferramentas para Resolução de Conflitos](#ferramentas-para-resolução-de-conflitos)
+
+## 9. [Estudos de Caso e Melhores Práticas](#9-estudos-de-caso-e-melhores-práticas)
+   - [Exemplos Reais de Utilização do Git](#exemplos-reais-de-utilização-do-git)
+   - [Dicas para Manter a Integridade do Repositório](#dicas-para-manter-a-integridade-do-repositório)
+
+
 ## 1. Instalação do Git
 ### Para Windows:
 
